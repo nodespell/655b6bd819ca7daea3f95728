@@ -1,154 +1,76 @@
-import {
-  createBrowserRouter,
-  Link,
-  Outlet,
-  Route,
-  RouterProvider,
-  Routes,
-} from "react-router-dom";
-import "./App.css";
-import logo from "./logo.svg";
+import React from 'react'
+import { createBrowserRouter, RouterProvider, Routes, Route, Link, Outlet } from 'react-router-dom'
 
 const router = createBrowserRouter([{ path: "*", Component: Root }]);
 
-function App() {
-  return <RouterProvider router={router} />;
-}
-
 function Root() {
-  return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Route>
-    </Routes>
-  );
+  return <pre className="font-serif">
+  <React.Fragment>
+    <React.Fragment>
+      The Raven
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      BY EDGAR ALLAN POE
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      Once upon a midnight dreary, while I pondered, weak and weary,
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      Over many a quaint and curious volume of forgotten lore—
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      {'    '}While I nodded, nearly napping, suddenly there came a tapping,
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      As of some one gently rapping, rapping at my chamber door.
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      “’Tis some visitor,” I muttered, “tapping at my chamber door—
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      {'            '}Only this and nothing more.”
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      {'    '}Ah, distinctly I remember it was in the bleak December;
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      And each separate dying ember wrought its ghost upon the floor.
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      {'    '}Eagerly I wished the morrow;—vainly I had sought to borrow
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      {'    '}From my books surcease of sorrow—sorrow for the lost Lenore—
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      For the rare and radiant maiden whom the angels name Lenore—
+      <br />
+    </React.Fragment>
+    <React.Fragment>
+      {'            '}Nameless here for evermore.
+    </React.Fragment>
+  </React.Fragment>
+</pre>
 }
 
-function Layout() {
-  const titleText = "Learn React";
-  return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar />
-        <Outlet />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          This is the NodeSpell test app created by{" "}
-          <code>create-react-app</code>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {titleText}
-        </a>
-      </header>
-      <Footer />
-    </div>
-  );
+export default function App() {
+  return <RouterProvider router={router} />
 }
-
-function NavBar() {
-  const navStyle = {
-    padding: "10px",
-    marginBottom: "15px",
-  };
-
-  const ulStyle = {
-    listStyleType: "none",
-    margin: 0,
-    padding: 0,
-    overflow: "hidden",
-  };
-
-  const liStyle = {
-    float: "left",
-  };
-
-  const linkStyle = {
-    display: "block",
-    color: "white",
-    textAlign: "center",
-    padding: "14px 16px",
-    textDecoration: "none",
-  };
-
-  return (
-    <nav style={navStyle}>
-      <ul style={ulStyle}>
-        <li style={liStyle}>
-          <Link to="/" style={linkStyle}>
-            Home
-          </Link>
-        </li>
-        <li style={liStyle}>
-          <Link to="/about" style={linkStyle}>
-            About
-          </Link>
-        </li>
-        <li style={liStyle}>
-          <Link to="/projects" style={linkStyle}>
-            Projects
-          </Link>
-        </li>
-        <li style={liStyle}>
-          <Link to="/contact" style={linkStyle}>
-            Contact
-          </Link>
-        </li>
-      </ul>
-    </nav>
-  );
-}
-
-function Footer() {
-  return (
-    <footer>
-      <p>Footer</p>
-    </footer>
-  );
-}
-
-function Home() {
-  return (
-    <>
-      <h1>Welcome!</h1>
-      <p>This is a demo section for router.</p>
-    </>
-  );
-}
-
-function About() {
-  return (
-    <>
-      <h1>About</h1>
-      <p>Some information about me.</p>
-    </>
-  );
-}
-
-function Projects() {
-  return (
-    <>
-      <h1>Projects</h1>
-      <p>Here shows the projects</p>
-    </>
-  );
-}
-
-function Contact() {
-  return (
-    <>
-      <h1>Contact</h1>
-      <p>Contact information</p>
-    </>
-  );
-}
-
-export default App;
